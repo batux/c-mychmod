@@ -23,4 +23,17 @@ Custom 'mychmod' program's output:
 $ ./mychmod u+rwx,g=rw,o=r,+rx,+r data.txt 
 $ ls -l data.txt 
 -rwxrw-r--  1 batux  staff  0 Feb 28 22:35 data.txt
+
+$ ./mychmod 0 data.txt 
+$ ls -l data.txt 
+----------  1 batux  staff  0 Feb 28 22:35 data.txt
+
+$ ./mychmod 777 data.txt 
+$ ls -l data.txt 
+-rwxrwxrwx  1 batux  staff  0 Feb 28 22:35 data.txt
+
+$ ./mychmod +rw,o=r data.txt 
+$ ls -l data.txt 
+-rw-rw-r--  1 batux  staff  0 Feb 28 22:35 data.txt
+
 ```
