@@ -8,7 +8,16 @@ One set for the owner of the file, another set for the members of the file’s g
 - w: Write permissions. The file can be edited, modified, and deleted.
 - x: Execute permissions. If the file is a script or a program, it can be run (executed).
 
-POSIX 'mychmod' program's output:
+- u: User, meaning the owner of the file.
+- g: Group, meaning members of the group the file belongs to.
+- o: Others, meaning people not governed by the u and g permissions.
+- a: All, meaning all of the above.
+
+- –: Minus sign. Removes the permission.
+- +: Plus sign. Grants the permission. The permission is added to the existing permissions. If you want to have this permission and only this permission set, use the = option, described below.
+- =: Equals sign. Set a permission and remove others.
+
+Custom 'mychmod' program's output:
 
 ```console
 $ ./mychmod u+rwx,g=rw,o=r,+rx,+r data.txt 
